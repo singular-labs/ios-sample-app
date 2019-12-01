@@ -17,14 +17,11 @@
 		216267552384340D0019FD74 /* Singular.js in Resources */ = {isa = PBXBuildFile; fileRef = 216267512384340D0019FD74 /* Singular.js */; };
 		2162675823843BE70019FD74 /* CustomEventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2162675723843BE70019FD74 /* CustomEventsController.m */; };
 		2162675C2384464C0019FD74 /* RevenueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2162675B2384464C0019FD74 /* RevenueController.m */; };
-		21626762238557C80019FD74 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21626761238557C80019FD74 /* NavigationController.m */; };
 		21626765238559130019FD74 /* TabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21626764238559130019FD74 /* TabController.m */; };
-		21626769238565E70019FD74 /* AdmonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21626768238565E70019FD74 /* AdmonController.m */; };
 		2162676C238566C00019FD74 /* DeeplinkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2162676B238566C00019FD74 /* DeeplinkController.m */; };
-		2162676F2386B5980019FD74 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2162676E2386B5980019FD74 /* SceneDelegate.m */; };
 		216267732386BCA60019FD74 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 216267722386BCA60019FD74 /* Utils.m */; };
+		21A3D9C12393D89300290460 /* IdentityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A3D9C02393D89300290460 /* IdentityController.m */; };
 		21DB6DB4237C036B008E845A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB6DB3237C036B008E845A /* AppDelegate.m */; };
-		21DB6DBA237C036B008E845A /* InitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB6DB9237C036B008E845A /* InitController.m */; };
 		21DB6DBD237C036B008E845A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21DB6DBB237C036B008E845A /* Main.storyboard */; };
 		21DB6DBF237C036E008E845A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DB6DBE237C036E008E845A /* Assets.xcassets */; };
 		21DB6DC2237C036E008E845A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21DB6DC0237C036E008E845A /* LaunchScreen.storyboard */; };
@@ -46,25 +43,18 @@
 		2162675723843BE70019FD74 /* CustomEventsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomEventsController.m; sourceTree = "<group>"; };
 		2162675A2384464C0019FD74 /* RevenueController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RevenueController.h; sourceTree = "<group>"; };
 		2162675B2384464C0019FD74 /* RevenueController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RevenueController.m; sourceTree = "<group>"; };
-		21626760238557C80019FD74 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
-		21626761238557C80019FD74 /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		21626763238559130019FD74 /* TabController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabController.h; sourceTree = "<group>"; };
 		21626764238559130019FD74 /* TabController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabController.m; sourceTree = "<group>"; };
-		21626766238560CD0019FD74 /* iOS Sample App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Sample App.entitlements"; sourceTree = "<group>"; };
-		21626767238565E70019FD74 /* AdmonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdmonController.h; sourceTree = "<group>"; };
-		21626768238565E70019FD74 /* AdmonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdmonController.m; sourceTree = "<group>"; };
 		2162676A238566C00019FD74 /* DeeplinkController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeeplinkController.h; sourceTree = "<group>"; };
 		2162676B238566C00019FD74 /* DeeplinkController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeeplinkController.m; sourceTree = "<group>"; };
-		2162676D2386B5980019FD74 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		2162676E2386B5980019FD74 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		216267702386BC040019FD74 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		216267712386BCA60019FD74 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		216267722386BCA60019FD74 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		21DB6DAF237C036B008E845A /* iOS Sample App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Sample App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21A3D9BF2393D89300290460 /* IdentityController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IdentityController.h; sourceTree = "<group>"; };
+		21A3D9C02393D89300290460 /* IdentityController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IdentityController.m; sourceTree = "<group>"; };
+		21DB6DAF237C036B008E845A /* iOSSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DB6DB2237C036B008E845A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		21DB6DB3237C036B008E845A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		21DB6DB8237C036B008E845A /* InitController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitController.h; sourceTree = "<group>"; };
-		21DB6DB9237C036B008E845A /* InitController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitController.m; sourceTree = "<group>"; };
 		21DB6DBC237C036B008E845A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21DB6DBE237C036E008E845A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21DB6DC1237C036E008E845A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,20 +107,16 @@
 		21626759238444350019FD74 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				21DB6DB8237C036B008E845A /* InitController.h */,
-				21DB6DB9237C036B008E845A /* InitController.m */,
 				2162675623843BE70019FD74 /* CustomEventsController.h */,
 				2162675723843BE70019FD74 /* CustomEventsController.m */,
 				2162675A2384464C0019FD74 /* RevenueController.h */,
 				2162675B2384464C0019FD74 /* RevenueController.m */,
-				21626760238557C80019FD74 /* NavigationController.h */,
-				21626761238557C80019FD74 /* NavigationController.m */,
 				21626763238559130019FD74 /* TabController.h */,
 				21626764238559130019FD74 /* TabController.m */,
-				21626767238565E70019FD74 /* AdmonController.h */,
-				21626768238565E70019FD74 /* AdmonController.m */,
 				2162676A238566C00019FD74 /* DeeplinkController.h */,
 				2162676B238566C00019FD74 /* DeeplinkController.m */,
+				21A3D9BF2393D89300290460 /* IdentityController.h */,
+				21A3D9C02393D89300290460 /* IdentityController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -148,7 +134,7 @@
 		21DB6DB0237C036B008E845A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21DB6DAF237C036B008E845A /* iOS Sample App.app */,
+				21DB6DAF237C036B008E845A /* iOSSampleApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,15 +142,12 @@
 		21DB6DB1237C036B008E845A /* ios-sample-app */ = {
 			isa = PBXGroup;
 			children = (
-				21626766238560CD0019FD74 /* iOS Sample App.entitlements */,
 				21626759238444350019FD74 /* Controllers */,
 				21DB6DB2237C036B008E845A /* AppDelegate.h */,
 				21DB6DB3237C036B008E845A /* AppDelegate.m */,
 				216267702386BC040019FD74 /* Constants.h */,
 				216267712386BCA60019FD74 /* Utils.h */,
 				216267722386BCA60019FD74 /* Utils.m */,
-				2162676D2386B5980019FD74 /* SceneDelegate.h */,
-				2162676E2386B5980019FD74 /* SceneDelegate.m */,
 				21DB6DBB237C036B008E845A /* Main.storyboard */,
 				21DB6DBE237C036E008E845A /* Assets.xcassets */,
 				21DB6DC0237C036E008E845A /* LaunchScreen.storyboard */,
@@ -191,7 +174,7 @@
 			);
 			name = "ios-sample-app";
 			productName = "ios-sample-app";
-			productReference = 21DB6DAF237C036B008E845A /* iOS Sample App.app */;
+			productReference = 21DB6DAF237C036B008E845A /* iOSSampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -245,15 +228,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21DB6DBA237C036B008E845A /* InitController.m in Sources */,
 				216267732386BCA60019FD74 /* Utils.m in Sources */,
-				21626769238565E70019FD74 /* AdmonController.m in Sources */,
 				21DB6DB4237C036B008E845A /* AppDelegate.m in Sources */,
 				21DB6DC5237C036E008E845A /* main.m in Sources */,
 				2162675823843BE70019FD74 /* CustomEventsController.m in Sources */,
+				21A3D9C12393D89300290460 /* IdentityController.m in Sources */,
 				2162676C238566C00019FD74 /* DeeplinkController.m in Sources */,
-				21626762238557C80019FD74 /* NavigationController.m in Sources */,
-				2162676F2386B5980019FD74 /* SceneDelegate.m in Sources */,
 				2162675C2384464C0019FD74 /* RevenueController.m in Sources */,
 				21626765238559130019FD74 /* TabController.m in Sources */,
 			);
@@ -398,6 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "ios-sample-app/iOS Sample App.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DZG6XY7PWJ;
 				INFOPLIST_FILE = "ios-sample-app/Info.plist";
@@ -410,7 +391,8 @@
 					"$(PROJECT_DIR)/Singular-SDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app;
-				PRODUCT_NAME = "iOS Sample App";
+				PRODUCT_NAME = iOSSampleApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -420,6 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "ios-sample-app/iOS Sample App.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DZG6XY7PWJ;
 				INFOPLIST_FILE = "ios-sample-app/Info.plist";
@@ -432,7 +415,8 @@
 					"$(PROJECT_DIR)/Singular-SDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app;
-				PRODUCT_NAME = "iOS Sample App";
+				PRODUCT_NAME = iOSSampleApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

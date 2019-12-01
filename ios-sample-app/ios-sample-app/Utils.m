@@ -11,41 +11,27 @@
 
 @implementation Utils
 
-+ (NSString*)getApiKey{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults stringForKey:APIKEY];
-}
-
-+ (NSString*)getSecret{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    return [userDefaults stringForKey:SECRET];
-}
-
-+ (void)setApiKey:(NSString*)apikey{
-    if([Utils isEmptyOrNull:apikey]){
-        return;
-    }
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:apikey forKey:APIKEY];
-    [userDefaults synchronize];
-}
-
-+ (void)setSecret:(NSString*)secret{
-    if([Utils isEmptyOrNull:secret]){
-        return;
-    }
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:secret forKey:SECRET];
-    [userDefaults synchronize];
-}
-
 + (BOOL)isEmptyOrNull:(NSString *)text{
-    if(text == nil || [text isEqualToString:@"null"] || [text length] == 0 || [text isKindOfClass:[NSNull class]] || [text isEqualToString:@"NULL"]){
-        return true;
+    if(!text || ![text length] ||
+       ![[text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]){
+        return YES;
     }
-    return false;
+    
+    return NO;
+}
+
++ (void)displayMessage:(NSString*) message withView:(UIViewController*) view{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    [view presentViewController:alert animated:YES completion:nil];
+
+    int duration = 1; // duration in seconds
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, duration * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    });
 }
 
 @end

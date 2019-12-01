@@ -7,21 +7,33 @@
 //
 
 #import "DeeplinkController.h"
+#import "AppDelegate.h"
+#import "Constants.h"
 
 @implementation DeeplinkController
 
-@synthesize deeplinkData;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
     
+    // Getting the deeplink data from the AppDelegate
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSDictionary* deeplinkData = appDelegate.deeplinkData;
+    
+    // If there's no deeplink data available, do nothing
     if(!deeplinkData){
         return;
     }
     
-    [self.deeplinkField setText:[deeplinkData objectForKey:@"deeplink"]];
-    [self.passthroughField setText:[deeplinkData objectForKey:@"passthrough"]];
-    [self.isDeferredField setText:[deeplinkData objectForKey:@"is_deferred"] ? @"Yes" : @"No"];
+    // Clear the deeplink data so it won't be used twice
+    appDelegate.deeplinkData = nil;
+    
+    // Display deeplink data
+    [self.deeplinkField setText:[deeplinkData objectForKey:DEEPLINK]];
+    [self.passthroughField setText:[deeplinkData objectForKey:PASSTHROUGH]];
+    [self.isDeferredField setText:[deeplinkData objectForKey:IS_DEFERRED] ? @"Yes" : @"No"];
 }
 
 @end

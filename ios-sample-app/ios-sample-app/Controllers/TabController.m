@@ -7,24 +7,19 @@
 //
 
 #import "TabController.h"
-#import "DeeplinkController.h"
 
 @implementation TabController
 
-@synthesize deeplinkData;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    if(deeplinkData){
-        DeeplinkController* deeplinkController = [self.viewControllers objectAtIndex:3];
-        deeplinkController.deeplinkData = deeplinkData;
-        self.deeplinkData = nil;
-        [self setSelectedIndex:3];
-    }
-
 }
 
+-(void)openedWithDeeplink{
+    // Display the DeeplinkController
+    [self setSelectedIndex:3];
+}
+
+// Minimizes the keyboard when it's not needed
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
 }

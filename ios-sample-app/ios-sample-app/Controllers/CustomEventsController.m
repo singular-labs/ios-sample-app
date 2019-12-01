@@ -8,23 +8,29 @@
 
 #import "CustomEventsController.h"
 #import "Singular.h"
+#import "Utils.h"
 
 @implementation CustomEventsController
 
 - (IBAction)sendEvent:(id)sender {
-    NSString* eventName = [self getEventName];
+    NSString* eventName =self.eventNameField.text;
     
-    if(!eventName){
+    if([Utils isEmptyOrNull:eventName]){
+        [Utils displayMessage:@"Please enter a valid event name" withView:self];
         return;
     }
     
+    // Reporting a simple event to Singular
     [Singular event:eventName];
+    
+    [Utils displayMessage:@"Event sent" withView:self];
 }
 
 - (IBAction)sendEventsWithAttributes:(id)sender {
-    NSString* eventName = [self getEventName];
+    NSString* eventName =self.eventNameField.text;
     
-    if(!eventName){
+     if([Utils isEmptyOrNull:eventName]){
+         [Utils displayMessage:@"Please enter a valid event name" withView:self];
         return;
     }
     
@@ -32,15 +38,10 @@
     [args setObject:@"value1" forKey:@"key1"];
     [args setObject:@"value2" forKey:@"key2"];
     
+    // Reporting a simple event with your custom attributes to pass with the event
     [Singular event:eventName withArgs:args];
-}
-
-- (NSString*)getEventName{
-    if (!self.eventNameField.text || self.eventNameField.text.length == 0){
-        return nil;
-    }
     
-    return self.eventNameField.text;
+    [Utils displayMessage:@"Event sent" withView:self];
 }
 
 @end

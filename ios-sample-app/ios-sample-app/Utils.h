@@ -10,10 +10,7 @@
 
 @interface Utils : NSObject
 
-+ (NSString*)getApiKey;
-+ (NSString*)getSecret;
-+ (void)setApiKey:(NSString*)apikey;
-+ (void)setSecret:(NSString*)secret;
 + (BOOL)isEmptyOrNull:(NSString *)text;
++ (void)displayMessage:(NSString*) message withView:(UIViewController*) view;
 
 @end

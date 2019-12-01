@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TabController : UITabBarController{
-    NSDictionary* deeplinkData;
-}
+@interface TabController : UITabBarController
 
-@property (nonatomic, retain) NSDictionary* deeplinkData;
+-(void)openedWithDeeplink;
 
 @end

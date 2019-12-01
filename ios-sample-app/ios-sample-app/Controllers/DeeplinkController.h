@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DeeplinkController : UIViewController {
-    NSDictionary* deeplinkData;
-}
+@interface DeeplinkController : UIViewController
 
-@property (nonatomic, retain) NSDictionary* deeplinkData;
 @property (weak, nonatomic) IBOutlet UILabel *deeplinkField;
 @property (weak, nonatomic) IBOutlet UILabel *passthroughField;
 @property (weak, nonatomic) IBOutlet UILabel *isDeferredField;
