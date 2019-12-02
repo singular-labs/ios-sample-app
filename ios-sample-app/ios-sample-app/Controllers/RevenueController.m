@@ -12,6 +12,12 @@
 
 @implementation RevenueController
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    
+    pickerData = @[@"EUR",@"GBP",@"ILS",@"INR",@"JPY",@"KRW",@"USD"];
+}
+
 - (IBAction)sendRevenueEvent:(id)sender {
     NSString* eventName = self.eventNameField.text;
     NSString* currency = self.currencyField.text;
@@ -73,6 +79,50 @@
     }
     
     return [self.revenueField.text doubleValue];
+}
+
+// Currency Picker logic
+- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return pickerData.count;
+}
+
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return pickerData[row];
+}
+
+- (IBAction)showCurrencyPicker:(id)sender {
+    self.currencyPicker = [[UIPickerView alloc] init];
+    self.currencyPicker.dataSource = self;
+    self.currencyPicker.delegate = self;
+    
+    UIToolbar* toolbar = [[UIToolbar alloc] init];
+    toolbar.barStyle = UIBarStyleBlack;
+    toolbar.translucent = YES;
+    [toolbar sizeToFit];
+    
+    //to make the done button aligned to the right
+    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc]
+                                          initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                   style:UIBarButtonItemStyleDone target:self
+                                                                  action:@selector(doneClicked:)];
+    
+    [toolbar setItems:[NSArray arrayWithObjects:flexibleSpaceLeft, doneButton, nil]];
+    
+    //custom input view
+    self.currencyField.inputView = self.currencyPicker;
+    self.currencyField.inputAccessoryView = toolbar;
+}
+
+-(void)doneClicked:(id)sender{
+    [self.currencyField resignFirstResponder];
+    NSString* currency = [self pickerView:self.currencyPicker titleForRow:[self.currencyPicker selectedRowInComponent:0] forComponent:0];
+    [self.currencyField setText:currency];
 }
 
 @end

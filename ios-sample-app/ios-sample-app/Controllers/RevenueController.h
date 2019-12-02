@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RevenueController : UIViewController
+@interface RevenueController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>{
+    NSArray* pickerData;
+}
 
 @property (strong, nonatomic) IBOutlet UITextField *eventNameField;
 @property (strong, nonatomic) IBOutlet UITextField *currencyField;
 @property (strong, nonatomic) IBOutlet UITextField *revenueField;
+@property (strong, nonatomic) IBOutlet UIPickerView *currencyPicker;
 
 @end
