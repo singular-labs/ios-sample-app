@@ -104,7 +104,7 @@
     toolbar.translucent = YES;
     [toolbar sizeToFit];
     
-    //to make the done button aligned to the right
+    // Aligns the done button to the right
     UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc]
                                           initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
@@ -114,7 +114,6 @@
     
     [toolbar setItems:[NSArray arrayWithObjects:flexibleSpaceLeft, doneButton, nil]];
     
-    //custom input view
     self.currencyField.inputView = self.currencyPicker;
     self.currencyField.inputAccessoryView = toolbar;
 }

@@ -36,7 +36,7 @@
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
  restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
     
-    // Starts a new session when the user opens the app using a Singulr Link while it was in the background
+    // Starts a new session when the user opens the app using a Singular Link while it was in the background
     [Singular startSession:APIKEY withKey:SECRET
            andUserActivity:userActivity
    withSingularLinkHandler:^(SingularLinkParams * params) {

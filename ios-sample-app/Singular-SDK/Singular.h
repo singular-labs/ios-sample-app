@@ -2,7 +2,7 @@
 //  Singular.h
 //  Singular SDK for iOS public API
 //
-//  Copyright © 2010-2016 Singular Inc. All rights reserved.
+//  Copyright © 2014-2019 Singular Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -76,7 +76,6 @@
 + (void)setBatchesEvents:(BOOL)boolean;
 + (void)sendAllBatches;
 
-//ANIMESH UPDATE
 // REVENUE
 + (void)revenue:(id)transaction;
 + (void)revenue:(id)transaction withAttributes:(NSDictionary*)attributes;
