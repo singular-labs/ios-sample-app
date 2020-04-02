@@ -23,6 +23,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // If your app uses scenes and you want to support Singular Links, please refer to the documentation here:
+    // https://support.singular.net/hc/en-us/articles/360038341692
+    
     // Starts a new session when the user opens the app if the session timeout has passed / opened using a Singular Link
     [Singular startSession:APIKEY withKey:SECRET
           andLaunchOptions:launchOptions
