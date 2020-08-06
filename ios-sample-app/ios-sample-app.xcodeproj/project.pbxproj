@@ -26,6 +26,7 @@
 		21DB6DBF237C036E008E845A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DB6DBE237C036E008E845A /* Assets.xcassets */; };
 		21DB6DC2237C036E008E845A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21DB6DC0237C036E008E845A /* LaunchScreen.storyboard */; };
 		21DB6DC5237C036E008E845A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB6DC4237C036E008E845A /* main.m */; };
+		27D1C9D924DC57120023B35F /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D1C9D824DC57120023B35F /* AppTrackingTransparency.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		21DB6DC1237C036E008E845A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21DB6DC3237C036E008E845A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21DB6DC4237C036E008E845A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27D1C9D824DC57120023B35F /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D1C9D924DC57120023B35F /* AppTrackingTransparency.framework in Frameworks */,
 				2162674E238432110019FD74 /* iAd.framework in Frameworks */,
 				2162674C2384320C0019FD74 /* AdSupport.framework in Frameworks */,
 				2162674A238432070019FD74 /* libz.tbd in Frameworks */,
@@ -83,6 +86,7 @@
 		21626742238431F10019FD74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27D1C9D824DC57120023B35F /* AppTrackingTransparency.framework */,
 				2162674D238432110019FD74 /* iAd.framework */,
 				2162674B2384320C0019FD74 /* AdSupport.framework */,
 				21626749238432070019FD74 /* libz.tbd */,
@@ -380,7 +384,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ios-sample-app/iOS Sample App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DZG6XY7PWJ;
 				INFOPLIST_FILE = "ios-sample-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -404,7 +408,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ios-sample-app/iOS Sample App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = S84G4K2QJ2;
 				INFOPLIST_FILE = "ios-sample-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -414,7 +418,7 @@
 					"${PROJECT_DIR}/Singular-SDK",
 					"$(PROJECT_DIR)/Singular-SDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app4;
 				PRODUCT_NAME = iOSSampleApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

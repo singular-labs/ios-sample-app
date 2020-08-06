@@ -6,8 +6,8 @@
 //  Copyright © 2019 Singular Labs. All rights reserved.
 //
 
-#define APIKEY @"<ENTER APIKEY>"
-#define SECRET @"<ENTER SECRET>"
+#define APIKEY @"<YOUR_API_KEY>"
+#define SECRET @"<YOUR_SECRET>"
 
 #define DEEPLINK @"deeplink"
 #define PASSTHROUGH @"passthrough"
