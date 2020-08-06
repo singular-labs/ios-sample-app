@@ -2,7 +2,7 @@
 //  Singular.h
 //  Singular SDK for iOS public API
 //
-//  Copyright © 2014-2019 Singular Inc. All rights reserved.
+//  Copyright © 2010-2020 Singular Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,10 +14,16 @@
 #import "SingularLinkParams.h"
 #endif
 
+// avoid circular include of SingularConfig
+#ifndef SingularConfig
+#import "SingularConfig.h"
+#endif
 
 @interface Singular : NSObject
 
-+ (void)startSession:(NSString *)apiKey withKey:(NSString *)apiSecret ;
++ (BOOL)start:(SingularConfig*)config;
+
++ (void)startSession:(NSString *)apiKey withKey:(NSString *)apiSecret;
 + (BOOL)startSession:(NSString *)apiKey withKey:(NSString *)apiSecret andLaunchOptions:(NSDictionary *)launchOptions withSingularLinkHandler:(void(^)(SingularLinkParams*))handler;
 + (BOOL)startSession:(NSString *)apiKey withKey:(NSString *)apiSecret
     andLaunchOptions:(NSDictionary *)launchOptions withSingularLinkHandler:(void(^)(SingularLinkParams*))handler andShortLinkResolveTimeout:(long)timeoutSec;
@@ -76,6 +82,7 @@
 + (void)setBatchesEvents:(BOOL)boolean;
 + (void)sendAllBatches;
 
+//ANIMESH UPDATE
 // REVENUE
 + (void)revenue:(id)transaction;
 + (void)revenue:(id)transaction withAttributes:(NSDictionary*)attributes;
@@ -94,7 +101,14 @@
 
 + (void)setSessionTimeout:(int)timeout;
 
-+ (void)setUnityVersion:(NSString*)version;
++ (void)setWrapperName:(NSString*)name andVersion:(NSString*)version;
+
+/* Global Properties */
+
++ (NSDictionary*)getGlobalProperties;
++ (BOOL)setGlobalProperty:(NSString*)key andValue:(NSString*)value overrideExisting:(BOOL)overrideExisting;
++ (void)unsetGlobalProperty:(NSString*)key;
++ (void)clearGlobalProperties;
 
 /* GDPR helpers */
 
@@ -103,5 +117,13 @@
 + (void)stopAllTracking;
 + (void)resumeAllTracking;
 + (BOOL)isAllTrackingStopped;
++ (void)limitDataSharing:(BOOL)shouldLimitDataSharing;
++ (BOOL)getLimitDataSharing;
+
+/* SKAN Methods */
+
++ (void)skanRegisterAppForAdNetworkAttribution;
++ (BOOL)skanUpdateConversionValue:(NSInteger)conversionValue;
++ (NSNumber *)skanGetConversionValue;
 
 @end

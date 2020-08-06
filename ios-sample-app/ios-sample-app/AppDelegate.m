@@ -13,6 +13,9 @@
 #import "TabController.h"
 #import "Constants.h"
 
+#import <AppTrackingTransparency/ATTrackingManager.h>
+#import <AdSupport/ASIdentifierManager.h>
+
 @interface AppDelegate ()
 
 @end
@@ -27,11 +30,18 @@
     // https://support.singular.net/hc/en-us/articles/360038341692
     
     // Starts a new session when the user opens the app if the session timeout has passed / opened using a Singular Link
-    [Singular startSession:APIKEY withKey:SECRET
-          andLaunchOptions:launchOptions
-   withSingularLinkHandler:^(SingularLinkParams * params) {
-        [self handleSingularLink:params];
-    }];
+    SingularConfig *config = [self getConfig];
+    config.launchOptions = launchOptions;
+    
+    // Will be zeros (unless tracking consent was given in a previous session)
+    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+
+    [Singular start:config];
+    
+    // Request user consent to use the Advertising Identifier (idfa)
+    [self requestTrackingAuthorization];
+    
+    idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     
     return YES;
 }
@@ -40,13 +50,51 @@
  restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> *restorableObjects))restorationHandler {
     
     // Starts a new session when the user opens the app using a Singular Link while it was in the background
-    [Singular startSession:APIKEY withKey:SECRET
-           andUserActivity:userActivity
-   withSingularLinkHandler:^(SingularLinkParams * params) {
-        [self handleSingularLink:params];
-    }];
+    SingularConfig *config = [self getConfig];
+    config.userActivity = userActivity;
     
+    [Singular start:config];
+    
+    // Request user consent to use the Advertising Identifier (idfa)
+    [self requestTrackingAuthorization];
+
     return YES;
+}
+
+- (SingularConfig *)getConfig {
+    SingularConfig *config = [[SingularConfig alloc] initWithApiKey:APIKEY andSecret:SECRET];
+    
+    config.singularLinksHandler = ^(SingularLinkParams * params) {
+        [self handleSingularLink:params];
+    };
+    
+    // Enable use of SKAN for iOS14 tracking
+    // Singular will call registerAppForAdNetworkAttribution for you
+    // Invoking [Singular skanRegisterAppForAdNetworkAttribution] will set this value to YES, even if done before/after [Singular start]
+    config.skAdNetworkEnabled = YES;
+    
+    // Enable manual conversion value updates
+    // IMPORTANT: set as NO (or just don't set - it defaults to NO) to let Singular manage conversion values
+    config.manualSkanConversionManagement = YES;
+    
+    config.conversionValueUpdatedCallback = ^(NSInteger newConversionValue) {
+      // Receive a callback whenever the Conversion Value is updated
+    };
+    
+    // Delay sending events for up to 3 minutes, or until Tracking is Authorized (only on iOS 14)
+    config.waitForTrackingAuthorizationWithTimeoutInterval = 180;
+    
+    return config;
+}
+
+- (void)requestTrackingAuthorization {
+    if (@available(iOS 14, *)) {
+        // call requestTrackingAuthorizationWithCompletionHandler from ATTrackingManager to start the user consent process
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status){
+            // your authorization handler here
+            // note: the Singular SDK will automatically detect if authorization has been given and initialize itself
+        }];
+    }
 }
 
 - (void)handleSingularLink:(SingularLinkParams*)params{
