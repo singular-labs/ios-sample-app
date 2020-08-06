@@ -37,6 +37,8 @@
     NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
 
     [Singular start:config];
+    
+    // Request user consent to use the Advertising Identifier (idfa)
     [self requestTrackingAuthorization];
     
     idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
@@ -53,6 +55,7 @@
     
     [Singular start:config];
     
+    // Request user consent to use the Advertising Identifier (idfa)
     [self requestTrackingAuthorization];
 
     return YES;
