@@ -20,6 +20,7 @@
 		21626765238559130019FD74 /* TabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21626764238559130019FD74 /* TabController.m */; };
 		2162676C238566C00019FD74 /* DeeplinkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2162676B238566C00019FD74 /* DeeplinkController.m */; };
 		216267732386BCA60019FD74 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 216267722386BCA60019FD74 /* Utils.m */; };
+		216EAB98261F20B00085D00C /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216EAB97261F20B00085D00C /* AdServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		21A3D9C12393D89300290460 /* IdentityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A3D9C02393D89300290460 /* IdentityController.m */; };
 		21DB6DB4237C036B008E845A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB6DB3237C036B008E845A /* AppDelegate.m */; };
 		21DB6DBD237C036B008E845A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21DB6DBB237C036B008E845A /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		216267702386BC040019FD74 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		216267712386BCA60019FD74 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		216267722386BCA60019FD74 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		216EAB97261F20B00085D00C /* AdServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdServices.framework; path = System/Library/Frameworks/AdServices.framework; sourceTree = SDKROOT; };
 		21A3D9BF2393D89300290460 /* IdentityController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IdentityController.h; sourceTree = "<group>"; };
 		21A3D9C02393D89300290460 /* IdentityController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IdentityController.m; sourceTree = "<group>"; };
 		21DB6DAF237C036B008E845A /* iOSSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				216EAB98261F20B00085D00C /* AdServices.framework in Frameworks */,
 				27D1C9D924DC57120023B35F /* AppTrackingTransparency.framework in Frameworks */,
 				2162674E238432110019FD74 /* iAd.framework in Frameworks */,
 				2162674C2384320C0019FD74 /* AdSupport.framework in Frameworks */,
@@ -86,6 +89,7 @@
 		21626742238431F10019FD74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				216EAB97261F20B00085D00C /* AdServices.framework */,
 				27D1C9D824DC57120023B35F /* AppTrackingTransparency.framework */,
 				2162674D238432110019FD74 /* iAd.framework */,
 				2162674B2384320C0019FD74 /* AdSupport.framework */,
