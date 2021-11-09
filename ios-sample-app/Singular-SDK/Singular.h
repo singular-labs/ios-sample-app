@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import "SingularAdData.h"
 
 // avoid circular include of SingularLinkParams
 #ifndef SingularLinkParams
@@ -100,6 +101,7 @@
 + (void)unsetCustomUserId;
 
 + (void)setSessionTimeout:(int)timeout;
++ (NSInteger)getFirstSessionUnixTime;
 
 + (void)setWrapperName:(NSString*)name andVersion:(NSString*)version;
 
@@ -125,5 +127,13 @@
 + (void)skanRegisterAppForAdNetworkAttribution;
 + (BOOL)skanUpdateConversionValue:(NSInteger)conversionValue;
 + (NSNumber *)skanGetConversionValue;
+
+/* Singular Links */
+
++(BOOL)isSingularLink:(id)linkHolder;
+
+/* Admon Methods*/
+
++ (void)adRevenue:(SingularAdData*)adData;
 
 @end

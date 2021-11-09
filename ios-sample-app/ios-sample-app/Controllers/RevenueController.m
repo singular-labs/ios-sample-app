@@ -2,8 +2,9 @@
 //  RevenueController.m
 //  ios-sample-app
 //
-//  Created by Eyal Rabinovich on 19/11/2019.
-//  Copyright © 2019 Singular Labs. All rights reserved.
+//  Created by Eyal Rabinovich on 13/11/2019.
+//  Updated by Jared Ornstead on 2021/11/07
+//  Copyright © 2021 Singular Labs. All rights reserved.
 //
 
 #import "RevenueController.h"
@@ -14,114 +15,91 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+}
+
+- (IBAction)send_iapCompleteEvent:(id)sender {
+    // Send a transaction event to Singular with the transaction receipt.
     
-    pickerData = @[@"EUR",@"GBP",@"ILS",@"INR",@"JPY",@"KRW",@"USD"];
+    //SKPaymentTransaction* transaction = ...;
+    //[Singular iapComplete:transaction];
+    [Utils displayMessage:@"iapComplete Event \nrequires SKPaymentTransaction" withView:self];
+}
+
+- (IBAction)send_iapCompleteWithNameEvent:(id)sender {
+    // Send a transaction event to Singular with a custom name for the event
+    
+    //[Singular iapComplete:transaction withName:@"MyCustomRevenue"];
+    [Utils displayMessage:@"iapCompleteWithName Event \nrequires SKPaymentTransaction" withView:self];
 }
 
 - (IBAction)sendRevenueEvent:(id)sender {
-    NSString* eventName = self.eventNameField.text;
-    NSString* currency = self.currencyField.text;
-    double revenue = [self getRevenue];
+    // Settig the Event Name, Currency, and total revenue amount for the event
+    NSString* currency = @"USD";
+    double revenue = 1.99;
     
-    if([Utils isEmptyOrNull:eventName]){
-        [Utils displayMessage:@"Please enter a valid event name" withView:self];
-        return;
-    }
+    // Reporting a simple revenue event to Singular will send __iap__ revenue event with no attributes
+    [Singular revenue:currency amount:revenue];
+    [Utils displayMessage:@"IAP Revenue Event sent" withView:self];
+}
+
+- (IBAction)sendRevenueWithProductDetailsEvent:(id)sender {
+    // Reporting a simple revenue event to Singular with product details
+    NSString* currency = @"USD";
+    double revenue = 5.00;
+    NSString* productSKU = @"SKU1928375";
+    NSString* productName = @"Reservation Fee";
+    NSString* productCategory = @"Fee";
+    int productQuantity = 1;
+    double productPrice = 5.00;
     
-    if([Utils isEmptyOrNull:currency]){
-        [Utils displayMessage:@"Please enter a valid currency" withView:self];
-        return;
-    }
-    
-    if(revenue <= 0){
-        [Utils displayMessage:@"Revenue can't be zero or empty" withView:self];
-        return;
-    }
+    // Reporting a simple revenue event to Singular will send __iap__ revenue event with no attributes
+    [Singular revenue:currency amount:revenue productSKU:productSKU productName:productName productCategory:productCategory productQuantity:productQuantity productPrice:productPrice];
+    [Utils displayMessage:@"Revenue Event\nwith product details\nsent" withView:self];
+}
+
+- (IBAction)sendCustomRevenueEvent:(id)sender {
+    // Setting the Event Name, Currency, and total revenue amount for the event
+    NSString* eventName = @"CustomRevenue";
+    NSString* currency = @"USD";
+    double revenue = 1.99;
     
     // Reporting a simple revenue event to Singular
     [Singular customRevenue:eventName currency:currency amount:revenue];
+    [Utils displayMessage:@"CustomRevenue Event sent" withView:self];
+}
+
+- (IBAction)sendCustomRevenueWithProductDetailsEvent:(id)sender {
+    // Reporting a simple revenue event to Singular with product details
+    NSString* eventName = @"MyCustomRevenue";
+    NSString* currency = @"USD";
+    double revenue = 5.00;
+    NSString* productSKU = @"SKU1928375";
+    NSString* productName = @"Reservation Fee";
+    NSString* productCategory = @"Fee";
+    int productQuantity = 1;
+    double productPrice = 5.00;
     
-    [Utils displayMessage:@"Revenue event sent" withView:self];
+    // Reporting a Custom revenue event to Singular with Product Details
+    [Singular customRevenue:eventName currency:currency amount:revenue productSKU:productSKU productName:productName productCategory:productCategory productQuantity:productQuantity productPrice:productPrice];
+    
+    [Utils displayMessage:@"Custom Revenue Event\nwith product details\nsent" withView:self];
 }
 
 - (IBAction)sendRevenueEventWithArgs:(id)sender {
-    NSString* eventName = self.eventNameField.text;
-    NSString* currency = self.currencyField.text;
-    double revenue = [self getRevenue];
+    // Settig the Event Name, Currency, and total revenue amount for the event
+    NSString* eventName = @"CustomRevenueWithArgs";
+    NSString* currency = @"USD";
+    double revenue = 19.99;
     
-    if([Utils isEmptyOrNull:eventName]){
-        [Utils displayMessage:@"Please enter a valid event name" withView:self];
-        return;
-    }
-    
-    if([Utils isEmptyOrNull:currency]){
-        [Utils displayMessage:@"Please enter a valid currency" withView:self];
-        return;
-    }
-    
-    if(revenue <= 0){
-        [Utils displayMessage:@"Revenue must be a number greater than 0" withView:self];
-        return;
-    }
-    
-    // Reporting a simple revenue event with your custom attributes to pass with the event
+    // Adding your custom revenue arguments into a dictionary
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     [args setObject:@"value1" forKey:@"key1"];
     [args setObject:@"value2" forKey:@"key2"];
+    [args setObject:@"value3" forKey:@"key3"];
     
     [Singular customRevenue:eventName currency:currency amount:revenue withAttributes:args];
-    [Utils displayMessage:@"Revenue event sent" withView:self];
+    [Utils displayMessage:@"CustomRevenueWithArgs event sent" withView:self];
 }
 
-- (double)getRevenue{
-    if ([Utils isEmptyOrNull:self.revenueField.text]){
-        return 0;
-    }
-    
-    return [self.revenueField.text doubleValue];
-}
-
-// Currency Picker logic
-- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
-    return 1;
-}
-
-- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return pickerData.count;
-}
-
-- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return pickerData[row];
-}
-
-- (IBAction)showCurrencyPicker:(id)sender {
-    self.currencyPicker = [[UIPickerView alloc] init];
-    self.currencyPicker.dataSource = self;
-    self.currencyPicker.delegate = self;
-    
-    UIToolbar* toolbar = [[UIToolbar alloc] init];
-    toolbar.barStyle = UIBarStyleBlack;
-    toolbar.translucent = YES;
-    [toolbar sizeToFit];
-    
-    // Aligns the done button to the right
-    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc]
-                                          initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    
-    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-                                                                   style:UIBarButtonItemStyleDone target:self
-                                                                  action:@selector(doneClicked:)];
-    
-    [toolbar setItems:[NSArray arrayWithObjects:flexibleSpaceLeft, doneButton, nil]];
-    
-    self.currencyField.inputView = self.currencyPicker;
-    self.currencyField.inputAccessoryView = toolbar;
-}
-
--(void)doneClicked:(id)sender{
-    [self.currencyField resignFirstResponder];
-    NSString* currency = [self pickerView:self.currencyPicker titleForRow:[self.currencyPicker selectedRowInComponent:0] forComponent:0];
-    [self.currencyField setText:currency];
-}
 
 @end

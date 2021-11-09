@@ -10,6 +10,7 @@ This sample contains examples of:
 - Sending custom events
 - Sending simple revenue events
 - Handling deep links / deferred deep links
+- Support ESP Domain
 
 ## Getting Started
 To run the sample app you'll have to configure your own API Key / Secret as follows:

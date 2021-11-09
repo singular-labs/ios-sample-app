@@ -2,19 +2,27 @@
 //  RevenueController.h
 //  ios-sample-app
 //
-//  Created by Eyal Rabinovich on 19/11/2019.
-//  Copyright © 2019 Singular Labs. All rights reserved.
+//  Created by Eyal Rabinovich on 13/11/2019.
+//  Updated by Jared Ornstead on 2021/11/07
+//  Copyright © 2021 Singular Labs. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface RevenueController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>{
-    NSArray* pickerData;
-}
+@interface RevenueController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITextField *eventNameField;
-@property (strong, nonatomic) IBOutlet UITextField *currencyField;
-@property (strong, nonatomic) IBOutlet UITextField *revenueField;
-@property (strong, nonatomic) IBOutlet UIPickerView *currencyPicker;
+- (IBAction)send_iapCompleteEvent:(id)sender;
+
+- (IBAction)send_iapCompleteWithNameEvent:(id)sender;
+
+- (IBAction)sendRevenueEvent:(id)sender;
+
+- (IBAction)sendRevenueWithProductDetailsEvent:(id)sender;
+
+- (IBAction)sendCustomRevenueEvent:(id)sender;
+
+- (IBAction)sendCustomRevenueWithProductDetailsEvent:(id)sender;
+
+- (IBAction)sendRevenueEventWithArgs:(id)sender;
 
 @end
