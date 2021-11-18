@@ -12,9 +12,13 @@
 #import "Utils.h"
 #import "TabController.h"
 #import "Constants.h"
+#import <AdServices/AdServices.h>
 
+#import <UserNotifications/UserNotifications.h>
 #import <AppTrackingTransparency/ATTrackingManager.h>
 #import <AdSupport/ASIdentifierManager.h>
+
+#define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 @interface AppDelegate ()
 
@@ -23,6 +27,10 @@
 @implementation AppDelegate
 
 @synthesize deeplinkData;
+@synthesize att_state;
+@synthesize s_idfa;
+@synthesize s_idfv;
+@synthesize sharedMessage;
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Request user consent to use the Advertising Identifier (idfa)
