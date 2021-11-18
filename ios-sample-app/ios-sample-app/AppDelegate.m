@@ -38,16 +38,7 @@
     // Starts a new session when the user opens the app if the session timeout has passed / opened using a Singular Link
     SingularConfig *config = [self getConfig];
     config.launchOptions = launchOptions;
-    
-    // Will be zeros (unless tracking consent was given in a previous session)
-    //NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-
     [Singular start:config];
-    
-    // Request user consent to use the Advertising Identifier (idfa)
-    //[self requestTrackingAuthorization];
-    
-    //idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     
     return YES;
 }
@@ -58,37 +49,83 @@
     // Starts a new session when the user opens the app using a Singular Link while it was in the background
     SingularConfig *config = [self getConfig];
     config.userActivity = userActivity;
-    
     [Singular start:config];
-    
-    // Request user consent to use the Advertising Identifier (idfa)
-    [self requestTrackingAuthorization];
+        
+    return YES;
+}
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options{
+    // Starts a new session when the user opens the app using a Non Singular Link, like a traditional App scheme.
+    // This code block will provide the Non Singular link value to the Singular Deeplink Handler
+    SingularConfig *config = [self getConfig];
+    [Singular start:config];
+            
+    // Replace this code with your own logic to handle Non Singular Deeplinks
+    NSLog(@"Handle URL: %@", url);
+    NSString *deeplink = url.absoluteString;
+    if (deeplink == (id)[NSNull null] || deeplink.length == 0 ) deeplink = @"";
+    NSMutableDictionary* values = [[NSMutableDictionary alloc] init];
+    [values setObject:deeplink forKey:DEEPLINK];
+    self.deeplinkData = values;
+    [self navigateToDeeplinkController];
+    
     return YES;
 }
 
 - (SingularConfig *)getConfig {
+    // Singular Configuration
+        
+    // Optional: Modifying the Session Timeout
+    // By default, if the app runs in the background for 60 seconds or more before returning
+    // to the foreground, the SDK registers a new session.
+    //[Singular setSessionTimeout:60];
+    
+    // Optional: Setting the Custom User ID
+    // If you already know the user ID when the app opens, set it before initializing the
+    // Singular SDK. This way, Singular will have the user ID from the very first session.
+    // Otherwise, set the user ID during Authentication.
+    //[Singular setCustomUserId:@"a_user_id"];
+    
+    // Invoke the Config Object
     SingularConfig *config = [[SingularConfig alloc] initWithApiKey:APIKEY andSecret:SECRET];
     
+    // Initialize the Singular Links Handler and Callback to retreive the deeplink or deferred
+    // deeplink values.
     config.singularLinksHandler = ^(SingularLinkParams * params) {
         [self handleSingularLink:params];
     };
-    
-    // Enable use of SKAN for iOS14 tracking
-    // Singular will call registerAppForAdNetworkAttribution for you
-    // Invoking [Singular skanRegisterAppForAdNetworkAttribution] will set this value to YES, even if done before/after [Singular start]
+        
+    // Enable skAdNetwork support for iOS14+ tracking. Singular will call
+    // registerAppForAdNetworkAttribution for you.
     config.skAdNetworkEnabled = YES;
     
-    // Enable manual conversion value updates
-    // IMPORTANT: set as NO (or just don't set - it defaults to NO) to let Singular manage conversion values
-    config.manualSkanConversionManagement = YES;
+    // Optional: To enable manual conversion value updates, set this to YES
+    // IMPORTANT: The default is NO, allowing Singular to manage your Conversion Values.
+    //config.manualSkanConversionManagement = YES;
     
+    // Optional: Receive a callback whenever the Conversion Value is updated
     config.conversionValueUpdatedCallback = ^(NSInteger newConversionValue) {
-      // Receive a callback whenever the Conversion Value is updated
+        NSLog(@"Conversion Value Callback: %lu", (unsigned long)newConversionValue);
     };
     
-    // Delay sending events for up to 3 minutes, or until Tracking is Authorized (only on iOS 14)
-    config.waitForTrackingAuthorizationWithTimeoutInterval = 180;
+    // Optional: To delay the firing of a user session, you can initialize the Singular SDK
+    // with the waitForTrackingAuthorizationWithTimeoutInterval. Singular will then start the
+    // attribution process, taking advantage of the IDFA if it is available or using probabilistic
+    // attribution if the IDFA is not available. Delay sending events for up to 3 minutes,
+    // or until Tracking is Authorized (only on iOS 14)
+    config.waitForTrackingAuthorizationWithTimeoutInterval = 300;
+    
+    // Optional: Setting Global Properties through SingularConfig
+    // You can define up to 5 global properties.
+    // They persist between app runs (with the latest value you gave them) until you unset them
+    // or the user uninstalls the app.
+    // Each property name and value can be up to 200 characters long. If you pass a longer property
+    // name or value, it will be truncated to 200 characters.
+    //
+    // Note that since global properties and their values persist between app runs, the property
+    // that you are setting may already be set to a different value. Use the overrideExisting
+    // parameter to tell the SDK whether to override an existing property with the new value or not.
+    [config setGlobalProperty:@"example_key" withValue:@"example_value" overrideExisting:YES];
     
     return config;
 }
