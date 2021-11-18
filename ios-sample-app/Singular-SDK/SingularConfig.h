@@ -25,6 +25,7 @@
 @property void(^singularLinksHandler)(SingularLinkParams*);
 @property long shortLinkResolveTimeOut;
 @property NSArray* supportedDomains;
+@property NSArray* espDomains;
 
 // Global Properties fields
 @property (readonly) NSMutableDictionary* globalProperties;
@@ -38,5 +39,6 @@
 -(id)initWithApiKey:(NSString*)apikey andSecret:(NSString*)secret;
 
 -(void)setGlobalProperty:(NSString*)key withValue:(NSString*)value overrideExisting:(BOOL)overrideExisiting;
+-(NSString*)toJsonString;
 
 @end

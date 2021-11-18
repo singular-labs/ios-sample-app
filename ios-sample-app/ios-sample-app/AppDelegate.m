@@ -24,7 +24,13 @@
 
 @synthesize deeplinkData;
 
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    // Request user consent to use the Advertising Identifier (idfa)
+    [self requestTrackingAuthorization];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSLog(@"SDK Version: %@", Singular.version);
     
     // If your app uses scenes and you want to support Singular Links, please refer to the documentation here:
     // https://support.singular.net/hc/en-us/articles/360038341692
@@ -34,14 +40,14 @@
     config.launchOptions = launchOptions;
     
     // Will be zeros (unless tracking consent was given in a previous session)
-    NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    //NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
 
     [Singular start:config];
     
     // Request user consent to use the Advertising Identifier (idfa)
-    [self requestTrackingAuthorization];
+    //[self requestTrackingAuthorization];
     
-    idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    //idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     
     return YES;
 }
