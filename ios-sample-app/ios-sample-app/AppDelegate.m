@@ -130,8 +130,10 @@
     return config;
 }
 
+// This function is used to display the ATT Pop up for consent. It is assumed that your App is already managing ATT.
 - (void)requestTrackingAuthorization {
     if (@available(iOS 14, *)) {
+        NSLog(@"Requesting ATT Consent");
         // call requestTrackingAuthorizationWithCompletionHandler from ATTrackingManager to start the user consent process
         [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status){
             // your authorization handler here
@@ -140,24 +142,33 @@
     }
 }
 
+// This is function will parse the parameters from a Singular Link or from the Response of
+// the first session to provide the deeplink, deferred deeplink, and passthrough values.
 - (void)handleSingularLink:(SingularLinkParams*)params{
+    NSLog(@"\n**** - handleSingularLink - ****\n");
+    NSString* deeplink = [params getDeepLink];
+    NSString* passthrough = [params getPassthrough];
+    BOOL isDeferredDeeplink = [params isDeferred];
+    
+    // Handle the Deeplink and Passthorugh Values
+    if (deeplink == (id)[NSNull null] || deeplink.length == 0 ) deeplink = @"";
+    if (passthrough == (id)[NSNull null] || passthrough.length == 0 ) passthrough = @"";
+    NSLog(@"Deeplink: %@", deeplink);
+    NSLog(@"Passthrough: %@", passthrough);
+    
     NSMutableDictionary* values = [[NSMutableDictionary alloc] init];
-    
-    [values setObject:[params getDeepLink] forKey:DEEPLINK];
-    [values setObject:[params getPassthrough] forKey:PASSTHROUGH];
-    [values setObject:[NSNumber numberWithBool:[params isDeferred]] forKey:IS_DEFERRED];
-    
+    [values setObject:deeplink forKey:DEEPLINK];
+    [values setObject:passthrough forKey:PASSTHROUGH];
+    [values setObject:[NSNumber numberWithBool:isDeferredDeeplink] forKey:IS_DEFERRED];
     self.deeplinkData = values;
-    
     [self navigateToDeeplinkController];
 }
 
+// This function opens the deeplink view controller to display the provided deeplink data
 -(void)navigateToDeeplinkController{
-    
     // UI changes must run on main thread
     dispatch_async(dispatch_get_main_queue(), ^{
         TabController* tabBar = (TabController*)self.window.rootViewController;
-    
         // Signal to the TabController the app opened using a Singular Link
         [tabBar openedWithDeeplink];
     });
