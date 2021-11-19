@@ -42,15 +42,15 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2K0-e8-cE2">
                                 <rect key="frame" x="57" y="178.5" width="300" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="UNb-k6-ZKc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="UNb-k6-ZKc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK1-M0-o1e">
-                                <rect key="frame" x="57" y="242.5" width="300" height="30"/>
+                                <rect key="frame" x="159" y="242.5" width="96" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Poc-2t-yrf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Poc-2t-yrf"/>
                                 </constraints>
                                 <state key="normal" title="Custom Event"/>
                                 <connections>
@@ -58,9 +58,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoE-64-qzy">
-                                <rect key="frame" x="57" y="302.5" width="300" height="30"/>
+                                <rect key="frame" x="105.5" y="302.5" width="203" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="oLf-ls-nQg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="oLf-ls-nQg"/>
                                 </constraints>
                                 <state key="normal" title="Custom Event With Attributes"/>
                                 <connections>
@@ -199,7 +199,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Revenue Event Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p8z-RU-lL5">
                                 <rect key="frame" x="57" y="178.5" width="300" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="gsl-Fh-4cY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="gsl-Fh-4cY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -207,7 +207,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Revenue" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9pM-0V-nEk">
                                 <rect key="frame" x="57" y="306.5" width="300" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="JAg-s8-5Lw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="JAg-s8-5Lw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -215,7 +215,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Currency" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Avp-M6-Khs">
                                 <rect key="frame" x="57" y="242.5" width="300" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="xSl-vh-g94"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="xSl-vh-g94"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -224,9 +224,9 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBO-Te-RZ2">
-                                <rect key="frame" x="57" y="430.5" width="300" height="30"/>
+                                <rect key="frame" x="102.5" y="430.5" width="209" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Hwb-Ht-eye"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Hwb-Ht-eye"/>
                                 </constraints>
                                 <state key="normal" title="Revenue Event With Attributes"/>
                                 <connections>
@@ -234,9 +234,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1l-3N-Igg">
-                                <rect key="frame" x="57" y="370.5" width="300" height="30"/>
+                                <rect key="frame" x="156" y="370.5" width="102" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="doc-v2-pnt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="doc-v2-pnt"/>
                                 </constraints>
                                 <state key="normal" title="Revenue Event"/>
                                 <connections>
