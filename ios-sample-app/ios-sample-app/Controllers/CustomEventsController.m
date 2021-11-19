@@ -3,7 +3,8 @@
 //  ios-sample-app
 //
 //  Created by Eyal Rabinovich on 19/11/2019.
-//  Copyright © 2019 Singular Labs. All rights reserved.
+//  Updated by Jared Ornstead on 2021/11/19
+//  Copyright © 2021 Singular Labs. All rights reserved.
 //
 
 #import "CustomEventsController.h"
@@ -24,9 +25,10 @@
             // Note that conversion values may only increase, so only the first call will update it
             [Singular skanUpdateConversionValue:7];
             
-            // Reporting a simple event to Singular
+            // Reporting a simple Custom Event to Singular
             [Singular event:eventName];
             
+            // Logging for Testing
             NSLog(@"Event Sent: %@", eventName);
             [Utils displayMessage:@"Event sent" withView:self];
             
@@ -52,9 +54,10 @@
             // Note that conversion values may only increase, so only the first call will update it
             [Singular skanUpdateConversionValue:3];
             
-            // Reporting a simple event with your custom attributes to pass with the event
+            // Reporting a Custom Event with custom attributes in a Dictionary
             [Singular event:eventName withArgs:args];
             
+            // Logging for Testing
             NSLog(@"Event Sent with Args: %@", eventName);
             [Utils displayMessage:@"Event sent" withView:self];
             

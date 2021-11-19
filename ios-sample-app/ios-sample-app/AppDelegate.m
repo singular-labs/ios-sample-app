@@ -3,9 +3,25 @@
 //  ios-sample-app
 //
 //  Created by Eyal Rabinovich on 13/11/2019.
-//  Copyright © 2019 Singular Labs. All rights reserved.
+//  Updated by Jared Ornstead on 2021/11/19
+//  Copyright © 2021 Singular Labs. All rights reserved.
 //
+/*
+ This sample app illustrates working examples of a Singular implementation in Obj-C.
+ Console Logging and Event have been configured to out activity to the Singular SDK Console.
+ To build this App you must:
+    1. update your SDK Key and Secret in the Constants File.
+    2. update your Associated Domain capabilitiy per: https://support.singular.net/hc/en-us/articles/360031371451-Singular-Links-Prerequisites?navigation_side_bar=true
+    3. update your URL scheme in the Target App > Info > URL Types
+    4. update the bundle identifier in the Target App > General tab to something unqiue
 
+ You will find a View Controller illustrating each method to invoke Custom Events and Revenue Events. Examples
+ are provided where possible.
+ 
+ The Identity Controller will demonstrate the methods for Data Privacy and allows you to share
+ your identifiers or testing purposes.
+*/
+//
 #import "AppDelegate.h"
 #import <UIKit/UIKit.h>
 #import "Singular.h"

@@ -3,7 +3,8 @@
 //  ios-sample-app
 //
 //  Created by Eyal Rabinovich on 19/11/2019.
-//  Copyright © 2019 Singular Labs. All rights reserved.
+//  Updated by Jared Ornstead on 2021/11/19
+//  Copyright © 2021 Singular Labs. All rights reserved.
 //
 
 #import "RevenueController.h"
@@ -33,9 +34,10 @@
                 if(revenue <= 0){
                     [Utils displayMessage:@"Revenue can't be zero or empty" withView:self];
                 } else {
-                    // Reporting a simple revenue event to Singular
+                    // Reporting a simple Revenue Event to Singular
                     [Singular customRevenue:eventName currency:currency amount:revenue];
                     
+                    // Logging for Testing
                     NSLog(@"Revenue Event Sent: %@ %@ %f", eventName, currency, revenue);
                     [Utils displayMessage:@"Revenue event sent" withView:self];
                 }
@@ -62,13 +64,14 @@
                 if(revenue <= 0){
                     [Utils displayMessage:@"Revenue can't be zero or empty" withView:self];
                 } else {
-                    // Reporting a simple revenue event with your custom attributes to pass with the event
                     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
                     [args setObject:@"value1" forKey:@"key1"];
                     [args setObject:@"value2" forKey:@"key2"];
                     
+                    // Reporting a Custom Revenue Event to Singular with Arguments in a Dictionary
                     [Singular customRevenue:eventName currency:currency amount:revenue withAttributes:args];
                     
+                    // Logging for Testing
                     NSLog(@"Revenue Event Sent: %@ %@ %f %@", eventName, currency, revenue, args);
                     [Utils displayMessage:@"Revenue event sent" withView:self];
                 }
@@ -99,9 +102,10 @@
                 if(revenue <= 0){
                     [Utils displayMessage:@"Revenue can't be zero or empty" withView:self];
                 } else {
-                    // Reporting a Custom revetestnue event to Singular with Product Details
+                    // Reporting a Custom Revenue Event to Singular with Product Details
                     [Singular customRevenue:eventName currency:currency amount:revenue productSKU:productSKU productName:productName productCategory:productCategory productQuantity:productQuantity productPrice:revenue];
                     
+                    // Logging for Testing
                     NSLog(@"Revenue Event Sent: %@ %@ %f \nproductSKU: %@ productName: %@ productCategory: %@ productQuantity: %i productPrice: %f", eventName, currency, revenue, productSKU, productName, productCategory, productQuantity, revenue);
                     [Utils displayMessage:@"Custom Revenue Event\nwith product details\nsent" withView:self];
                 }
