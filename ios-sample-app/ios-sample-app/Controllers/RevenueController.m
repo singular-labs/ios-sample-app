@@ -3,7 +3,8 @@
 //  ios-sample-app
 //
 //  Created by Eyal Rabinovich on 19/11/2019.
-//  Copyright © 2019 Singular Labs. All rights reserved.
+//  Updated by Jared Ornstead on 2021/11/19
+//  Copyright © 2021 Singular Labs. All rights reserved.
 //
 
 #import "RevenueController.h"
@@ -25,23 +26,27 @@
     
     if([Utils isEmptyOrNull:eventName]){
         [Utils displayMessage:@"Please enter a valid event name" withView:self];
-        return;
+    } else {
+        if(eventName.length <= 32){
+            if([Utils isEmptyOrNull:currency]){
+                [Utils displayMessage:@"Please enter a valid currency" withView:self];
+            } else {
+                if(revenue <= 0){
+                    [Utils displayMessage:@"Revenue can't be zero or empty" withView:self];
+                } else {
+                    // Reporting a simple Revenue Event to Singular
+                    [Singular customRevenue:eventName currency:currency amount:revenue];
+                    
+                    // Logging for Testing
+                    NSLog(@"Revenue Event Sent: %@ %@ %f", eventName, currency, revenue);
+                    [Utils displayMessage:@"Revenue event sent" withView:self];
+                }
+            }
+        } else {
+            [Utils displayMessage:@"Event name is too long. Event name length limit is 32 characters." withView:self];
+        }
     }
-    
-    if([Utils isEmptyOrNull:currency]){
-        [Utils displayMessage:@"Please enter a valid currency" withView:self];
-        return;
-    }
-    
-    if(revenue <= 0){
-        [Utils displayMessage:@"Revenue can't be zero or empty" withView:self];
-        return;
-    }
-    
-    // Reporting a simple revenue event to Singular
-    [Singular customRevenue:eventName currency:currency amount:revenue];
-    
-    [Utils displayMessage:@"Revenue event sent" withView:self];
+    return;
 }
 
 - (IBAction)sendRevenueEventWithArgs:(id)sender {
@@ -51,27 +56,67 @@
     
     if([Utils isEmptyOrNull:eventName]){
         [Utils displayMessage:@"Please enter a valid event name" withView:self];
-        return;
+    } else {
+        if(eventName.length <= 32){
+            if([Utils isEmptyOrNull:currency]){
+                [Utils displayMessage:@"Please enter a valid currency" withView:self];
+            } else {
+                if(revenue <= 0){
+                    [Utils displayMessage:@"Revenue can't be zero or empty" withView:self];
+                } else {
+                    NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
+                    [args setObject:@"value1" forKey:@"key1"];
+                    [args setObject:@"value2" forKey:@"key2"];
+                    
+                    // Reporting a Custom Revenue Event to Singular with Arguments in a Dictionary
+                    [Singular customRevenue:eventName currency:currency amount:revenue withAttributes:args];
+                    
+                    // Logging for Testing
+                    NSLog(@"Revenue Event Sent: %@ %@ %f %@", eventName, currency, revenue, args);
+                    [Utils displayMessage:@"Revenue event sent" withView:self];
+                }
+            }
+        } else {
+            [Utils displayMessage:@"Event name is too long. Event name length limit is 32 characters." withView:self];
+        }
     }
-    
-    if([Utils isEmptyOrNull:currency]){
-        [Utils displayMessage:@"Please enter a valid currency" withView:self];
-        return;
-    }
-    
-    if(revenue <= 0){
-        [Utils displayMessage:@"Revenue must be a number greater than 0" withView:self];
-        return;
-    }
-    
-    // Reporting a simple revenue event with your custom attributes to pass with the event
-    NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
-    [args setObject:@"value1" forKey:@"key1"];
-    [args setObject:@"value2" forKey:@"key2"];
-    
-    [Singular customRevenue:eventName currency:currency amount:revenue withAttributes:args];
-    [Utils displayMessage:@"Revenue event sent" withView:self];
+    return;
 }
+
+- (IBAction)sendRevenueEventWithProductDetails:(id)sender {
+    NSString* eventName = self.eventNameField.text;
+    NSString* currency = self.currencyField.text;
+    double revenue = [self getRevenue];
+    NSString* productSKU = @"SKU1928375";
+    NSString* productName = @"Reservation Fee";
+    NSString* productCategory = @"Fee";
+    int productQuantity = 1;
+    
+    if([Utils isEmptyOrNull:eventName]){
+        [Utils displayMessage:@"Please enter a valid event name" withView:self];
+    } else {
+        if(eventName.length <= 32){
+            if([Utils isEmptyOrNull:currency]){
+                [Utils displayMessage:@"Please enter a valid currency" withView:self];
+            } else {
+                if(revenue <= 0){
+                    [Utils displayMessage:@"Revenue can't be zero or empty" withView:self];
+                } else {
+                    // Reporting a Custom Revenue Event to Singular with Product Details
+                    [Singular customRevenue:eventName currency:currency amount:revenue productSKU:productSKU productName:productName productCategory:productCategory productQuantity:productQuantity productPrice:revenue];
+                    
+                    // Logging for Testing
+                    NSLog(@"Revenue Event Sent: %@ %@ %f \nproductSKU: %@ productName: %@ productCategory: %@ productQuantity: %i productPrice: %f", eventName, currency, revenue, productSKU, productName, productCategory, productQuantity, revenue);
+                    [Utils displayMessage:@"Custom Revenue Event\nwith product details\nsent" withView:self];
+                }
+            }
+        } else {
+            [Utils displayMessage:@"Event name is too long. Event name length limit is 32 characters." withView:self];
+        }
+    }
+    return;
+}
+
 
 - (double)getRevenue{
     if ([Utils isEmptyOrNull:self.revenueField.text]){

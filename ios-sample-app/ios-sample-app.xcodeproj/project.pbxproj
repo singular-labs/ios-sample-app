@@ -13,7 +13,6 @@
 		2162674A238432070019FD74 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 21626749238432070019FD74 /* libz.tbd */; };
 		2162674C2384320C0019FD74 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2162674B2384320C0019FD74 /* AdSupport.framework */; };
 		2162674E238432110019FD74 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2162674D238432110019FD74 /* iAd.framework */; };
-		216267542384340D0019FD74 /* libSingular.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 216267502384340D0019FD74 /* libSingular.a */; };
 		216267552384340D0019FD74 /* Singular.js in Resources */ = {isa = PBXBuildFile; fileRef = 216267512384340D0019FD74 /* Singular.js */; };
 		2162675823843BE70019FD74 /* CustomEventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2162675723843BE70019FD74 /* CustomEventsController.m */; };
 		2162675C2384464C0019FD74 /* RevenueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2162675B2384464C0019FD74 /* RevenueController.m */; };
@@ -28,6 +27,9 @@
 		21DB6DC2237C036E008E845A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21DB6DC0237C036E008E845A /* LaunchScreen.storyboard */; };
 		21DB6DC5237C036E008E845A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB6DC4237C036E008E845A /* main.m */; };
 		27D1C9D924DC57120023B35F /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D1C9D824DC57120023B35F /* AppTrackingTransparency.framework */; };
+		7FD16A032746D2C90065908B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD16A022746D2C90065908B /* WebKit.framework */; };
+		7FD16A052746D2D30065908B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD16A042746D2D30065908B /* StoreKit.framework */; };
+		7FD16A062746D2F00065908B /* libSingular.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 216267502384340D0019FD74 /* libSingular.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		21DB6DC3237C036E008E845A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21DB6DC4237C036E008E845A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27D1C9D824DC57120023B35F /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		7FD16A022746D2C90065908B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		7FD16A042746D2D30065908B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD16A062746D2F00065908B /* libSingular.a in Frameworks */,
+				7FD16A052746D2D30065908B /* StoreKit.framework in Frameworks */,
+				7FD16A032746D2C90065908B /* WebKit.framework in Frameworks */,
 				216EAB98261F20B00085D00C /* AdServices.framework in Frameworks */,
 				27D1C9D924DC57120023B35F /* AppTrackingTransparency.framework in Frameworks */,
 				2162674E238432110019FD74 /* iAd.framework in Frameworks */,
@@ -79,7 +86,6 @@
 				21626748238432010019FD74 /* Security.framework in Frameworks */,
 				21626746238431F80019FD74 /* SystemConfiguration.framework in Frameworks */,
 				21626744238431F10019FD74 /* libsqlite3.0.tbd in Frameworks */,
-				216267542384340D0019FD74 /* libSingular.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +95,8 @@
 		21626742238431F10019FD74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FD16A042746D2D30065908B /* StoreKit.framework */,
+				7FD16A022746D2C90065908B /* WebKit.framework */,
 				216EAB97261F20B00085D00C /* AdServices.framework */,
 				27D1C9D824DC57120023B35F /* AppTrackingTransparency.framework */,
 				2162674D238432110019FD74 /* iAd.framework */,
@@ -191,7 +199,7 @@
 		21DB6DA7237C036B008E845A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = "Singular Labs";
 				TargetAttributes = {
 					21DB6DAE237C036B008E845A = {
@@ -295,6 +303,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -354,6 +363,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -385,10 +395,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "ios-sample-app/iOS Sample App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DZG6XY7PWJ;
+				DEVELOPMENT_TEAM = UL6RU95W7J;
 				INFOPLIST_FILE = "ios-sample-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -398,7 +409,8 @@
 					"${PROJECT_DIR}/Singular-SDK",
 					"$(PROJECT_DIR)/Singular-SDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app.objc;
 				PRODUCT_NAME = iOSSampleApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -409,10 +421,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "ios-sample-app/iOS Sample App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S84G4K2QJ2;
+				DEVELOPMENT_TEAM = UL6RU95W7J;
 				INFOPLIST_FILE = "ios-sample-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -422,7 +435,8 @@
 					"${PROJECT_DIR}/Singular-SDK",
 					"$(PROJECT_DIR)/Singular-SDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app4;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app.objc;
 				PRODUCT_NAME = iOSSampleApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
