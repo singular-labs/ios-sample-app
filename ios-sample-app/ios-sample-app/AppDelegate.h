@@ -12,18 +12,15 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     NSDictionary* deeplinkData;
-    NSString* att_state;
-    NSString* s_idfa;
-    NSString* s_idfv;
-    NSString* sharedMessage;
+    //NSString* s_idfa;
+    //NSString* s_idfv;
 }
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) NSDictionary* deeplinkData;
-@property (nonatomic, retain) NSString* att_state;
-@property (nonatomic, retain) NSString* s_idfa;
-@property (nonatomic, retain) NSString* s_idfv;
-@property (nonatomic, retain) NSString* sharedMessage;
+//@property (nonatomic, retain) NSString* att_state;
+//@property (nonatomic, retain) NSString* s_idfa;
+//@property (nonatomic, retain) NSString* s_idfv;
 
 @end
 

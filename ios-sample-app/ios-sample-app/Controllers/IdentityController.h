@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IdentityController : UIViewController
+@interface IdentityController : UIViewController 
 
 @property (weak, nonatomic) NSString *custom_user_id;
 @property (weak, nonatomic) NSString *att_state;

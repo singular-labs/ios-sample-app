@@ -19,6 +19,7 @@
 @end
 
 @implementation IdentityController
+NSString* shareMessage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -107,7 +108,6 @@
 }
 
 - (void)requestTrackingAuthorization {
-    AppDelegate *DataDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     // call requestTrackingAuthorizationWithCompletionHandler from ATTrackingManager to start the user consent process
     if (@available(iOS 14, *)) {
         [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
@@ -123,26 +123,25 @@
             [self.idfa_value setText:self.s_idfa];
             [self.idfv_value setText:self.s_idfv];
             [self.att_value setText:self.att_state];
-            DataDelegate.sharedMessage = [NSString stringWithFormat:@"Sample App Device Info:\n\nAdvertising ID (IDFA): %@ \n\nIDFV: %@",self.s_idfa,self.s_idfv];
+            shareMessage = [NSString stringWithFormat:@"Sample App Device Info:\nATT Status: %@ \nAdvertising IDs\n(IDFA): %@ \n(IDFV): %@ \n",self.att_state,self.s_idfa,self.s_idfv];
           }];
     } else {
         [self.idfa_value setText:[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString]];
         [self.idfv_value setText:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
         [self.att_value setText:@"(0) Not Determined < iOS14"];
+        shareMessage = [NSString stringWithFormat:@"Sample App Device Info:\nATT Status: %@ \nAdvertising IDs\n(IDFA): %@ \n(IDFV): %@ \n",self.att_state,self.s_idfa,self.s_idfv];
     }
     
     // Logging for Testing
+    NSLog(@"ATT Status: %@", self.att_value);
     NSLog(@"IDFA: %@", self.s_idfa);
     NSLog(@"IDFV: %@", self.s_idfv);
-    NSLog(@"ATT Status: %@", self.att_value);
 }
 
 - (IBAction)shareText:(id)sender {
     // create a share message
-    AppDelegate *DataDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSString* sharedText = DataDelegate.sharedMessage;
-    NSArray *items = @[ sharedText ];
-    
+    NSArray *items = @[ shareMessage ];
+        
     // build an activity view controller and present it
     UIActivityViewController *shareController = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
     [self presentActivityController:shareController];

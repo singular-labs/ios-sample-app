@@ -43,10 +43,9 @@
 @implementation AppDelegate
 
 @synthesize deeplinkData;
-@synthesize att_state;
-@synthesize s_idfa;
-@synthesize s_idfv;
-@synthesize sharedMessage;
+//@synthesize att_state;
+//@synthesize s_idfa;
+//@synthesize s_idfv;
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Request user consent to use the Advertising Identifier (idfa)
@@ -82,6 +81,7 @@
     // Starts a new session when the user opens the app using a Non Singular Link, like a traditional App scheme.
     // This code block will provide the Non Singular link value to the Singular Deeplink Handler
     SingularConfig *config = [self getConfig];
+    config.openUrl = url;
     [Singular start:config];
             
     // Replace this code with your own logic to handle Non Singular Deeplinks
@@ -175,8 +175,12 @@
     BOOL isDeferredDeeplink = [params isDeferred];
     
     // Handle the Deeplink and Passthorugh Values
-    if (deeplink == (id)[NSNull null] || deeplink.length == 0 ) deeplink = @"";
-    if (passthrough == (id)[NSNull null] || passthrough.length == 0 ) passthrough = @"";
+    if([Utils isEmptyOrNull:deeplink]){
+        deeplink = @"";
+    }
+    if([Utils isEmptyOrNull:passthrough]){
+        passthrough = @"";
+    }
     NSLog(@"Deeplink: %@", deeplink);
     NSLog(@"Passthrough: %@", passthrough);
     

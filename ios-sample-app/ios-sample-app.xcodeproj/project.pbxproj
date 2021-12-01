@@ -395,10 +395,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "ios-sample-app/iOS Sample App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DZG6XY7PWJ;
+				DEVELOPMENT_TEAM = UL6RU95W7J;
 				INFOPLIST_FILE = "ios-sample-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -408,7 +409,8 @@
 					"${PROJECT_DIR}/Singular-SDK",
 					"$(PROJECT_DIR)/Singular-SDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app.objc;
 				PRODUCT_NAME = iOSSampleApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -419,10 +421,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "ios-sample-app/iOS Sample App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S84G4K2QJ2;
+				DEVELOPMENT_TEAM = UL6RU95W7J;
 				INFOPLIST_FILE = "ios-sample-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -432,7 +435,8 @@
 					"${PROJECT_DIR}/Singular-SDK",
 					"$(PROJECT_DIR)/Singular-SDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app4;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.sample.app.objc;
 				PRODUCT_NAME = iOSSampleApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
