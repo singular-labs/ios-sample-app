@@ -7,27 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21626744238431F10019FD74 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 21626743238431F10019FD74 /* libsqlite3.0.tbd */; };
-		21626746238431F80019FD74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21626745238431F80019FD74 /* SystemConfiguration.framework */; };
-		21626748238432010019FD74 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21626747238432010019FD74 /* Security.framework */; };
-		2162674A238432070019FD74 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 21626749238432070019FD74 /* libz.tbd */; };
-		2162674C2384320C0019FD74 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2162674B2384320C0019FD74 /* AdSupport.framework */; };
-		2162674E238432110019FD74 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2162674D238432110019FD74 /* iAd.framework */; };
-		216267542384340D0019FD74 /* libSingular.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 216267502384340D0019FD74 /* libSingular.a */; };
-		216267552384340D0019FD74 /* Singular.js in Resources */ = {isa = PBXBuildFile; fileRef = 216267512384340D0019FD74 /* Singular.js */; };
 		2162675823843BE70019FD74 /* CustomEventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2162675723843BE70019FD74 /* CustomEventsController.m */; };
 		2162675C2384464C0019FD74 /* RevenueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2162675B2384464C0019FD74 /* RevenueController.m */; };
 		21626765238559130019FD74 /* TabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21626764238559130019FD74 /* TabController.m */; };
 		2162676C238566C00019FD74 /* DeeplinkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2162676B238566C00019FD74 /* DeeplinkController.m */; };
 		216267732386BCA60019FD74 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 216267722386BCA60019FD74 /* Utils.m */; };
-		216EAB98261F20B00085D00C /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216EAB97261F20B00085D00C /* AdServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		21A3D9C12393D89300290460 /* IdentityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A3D9C02393D89300290460 /* IdentityController.m */; };
 		21DB6DB4237C036B008E845A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB6DB3237C036B008E845A /* AppDelegate.m */; };
 		21DB6DBD237C036B008E845A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21DB6DBB237C036B008E845A /* Main.storyboard */; };
 		21DB6DBF237C036E008E845A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21DB6DBE237C036E008E845A /* Assets.xcassets */; };
 		21DB6DC2237C036E008E845A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21DB6DC0237C036E008E845A /* LaunchScreen.storyboard */; };
 		21DB6DC5237C036E008E845A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB6DC4237C036E008E845A /* main.m */; };
-		27D1C9D924DC57120023B35F /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D1C9D824DC57120023B35F /* AppTrackingTransparency.framework */; };
+		7F9A851028B7BDF7001074F9 /* Singular.js in Resources */ = {isa = PBXBuildFile; fileRef = 7F9A850828B7BDF7001074F9 /* Singular.js */; };
+		7F9A851228B7BE53001074F9 /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216EAB97261F20B00085D00C /* AdServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7F9A851328B7BE60001074F9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 21626743238431F10019FD74 /* libsqlite3.0.tbd */; };
+		7F9A851428B7BE66001074F9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21626745238431F80019FD74 /* SystemConfiguration.framework */; };
+		7F9A851528B7BE6D001074F9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21626747238432010019FD74 /* Security.framework */; };
+		7F9A851628B7BE75001074F9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 21626749238432070019FD74 /* libz.tbd */; };
+		7F9A851728B7BE7B001074F9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2162674B2384320C0019FD74 /* AdSupport.framework */; };
+		7F9A851828B7BE81001074F9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2162674D238432110019FD74 /* iAd.framework */; };
+		7F9A851A28B7BE87001074F9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9A851928B7BE87001074F9 /* WebKit.framework */; };
+		7F9A851C28B7BE8E001074F9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9A851B28B7BE8E001074F9 /* StoreKit.framework */; };
+		7F9A851D28B7BEFC001074F9 /* libSingular.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9A850C28B7BDF7001074F9 /* libSingular.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +38,6 @@
 		21626749238432070019FD74 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2162674B2384320C0019FD74 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		2162674D238432110019FD74 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		216267502384340D0019FD74 /* libSingular.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSingular.a; sourceTree = "<group>"; };
-		216267512384340D0019FD74 /* Singular.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Singular.js; sourceTree = "<group>"; };
-		216267522384340D0019FD74 /* SingularLinkParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingularLinkParams.h; sourceTree = "<group>"; };
-		216267532384340D0019FD74 /* Singular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singular.h; sourceTree = "<group>"; };
 		2162675623843BE70019FD74 /* CustomEventsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomEventsController.h; sourceTree = "<group>"; };
 		2162675723843BE70019FD74 /* CustomEventsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomEventsController.m; sourceTree = "<group>"; };
 		2162675A2384464C0019FD74 /* RevenueController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RevenueController.h; sourceTree = "<group>"; };
@@ -49,7 +46,6 @@
 		21626764238559130019FD74 /* TabController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabController.m; sourceTree = "<group>"; };
 		2162676A238566C00019FD74 /* DeeplinkController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeeplinkController.h; sourceTree = "<group>"; };
 		2162676B238566C00019FD74 /* DeeplinkController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeeplinkController.m; sourceTree = "<group>"; };
-		216267702386BC040019FD74 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		216267712386BCA60019FD74 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		216267722386BCA60019FD74 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		216EAB97261F20B00085D00C /* AdServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdServices.framework; path = System/Library/Frameworks/AdServices.framework; sourceTree = SDKROOT; };
@@ -64,6 +60,17 @@
 		21DB6DC3237C036E008E845A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21DB6DC4237C036E008E845A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27D1C9D824DC57120023B35F /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		7F9A850828B7BDF7001074F9 /* Singular.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Singular.js; sourceTree = "<group>"; };
+		7F9A850928B7BDF7001074F9 /* SingularLinkParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingularLinkParams.h; sourceTree = "<group>"; };
+		7F9A850A28B7BDF7001074F9 /* Singular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singular.h; sourceTree = "<group>"; };
+		7F9A850B28B7BDF7001074F9 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
+		7F9A850C28B7BDF7001074F9 /* libSingular.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSingular.a; sourceTree = "<group>"; };
+		7F9A850D28B7BDF7001074F9 /* SingularAdData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingularAdData.h; sourceTree = "<group>"; };
+		7F9A850E28B7BDF7001074F9 /* Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attributes.h; sourceTree = "<group>"; };
+		7F9A850F28B7BDF7001074F9 /* SingularConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingularConfig.h; sourceTree = "<group>"; };
+		7F9A851928B7BE87001074F9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		7F9A851B28B7BE8E001074F9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7FB812A328B7EAD9002784D9 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,15 +78,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				216EAB98261F20B00085D00C /* AdServices.framework in Frameworks */,
-				27D1C9D924DC57120023B35F /* AppTrackingTransparency.framework in Frameworks */,
-				2162674E238432110019FD74 /* iAd.framework in Frameworks */,
-				2162674C2384320C0019FD74 /* AdSupport.framework in Frameworks */,
-				2162674A238432070019FD74 /* libz.tbd in Frameworks */,
-				21626748238432010019FD74 /* Security.framework in Frameworks */,
-				21626746238431F80019FD74 /* SystemConfiguration.framework in Frameworks */,
-				21626744238431F10019FD74 /* libsqlite3.0.tbd in Frameworks */,
-				216267542384340D0019FD74 /* libSingular.a in Frameworks */,
+				7F9A851D28B7BEFC001074F9 /* libSingular.a in Frameworks */,
+				7F9A851C28B7BE8E001074F9 /* StoreKit.framework in Frameworks */,
+				7F9A851A28B7BE87001074F9 /* WebKit.framework in Frameworks */,
+				7F9A851828B7BE81001074F9 /* iAd.framework in Frameworks */,
+				7F9A851728B7BE7B001074F9 /* AdSupport.framework in Frameworks */,
+				7F9A851628B7BE75001074F9 /* libz.tbd in Frameworks */,
+				7F9A851528B7BE6D001074F9 /* Security.framework in Frameworks */,
+				7F9A851428B7BE66001074F9 /* SystemConfiguration.framework in Frameworks */,
+				7F9A851328B7BE60001074F9 /* libsqlite3.0.tbd in Frameworks */,
+				7F9A851228B7BE53001074F9 /* AdServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +97,8 @@
 		21626742238431F10019FD74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F9A851B28B7BE8E001074F9 /* StoreKit.framework */,
+				7F9A851928B7BE87001074F9 /* WebKit.framework */,
 				216EAB97261F20B00085D00C /* AdServices.framework */,
 				27D1C9D824DC57120023B35F /* AppTrackingTransparency.framework */,
 				2162674D238432110019FD74 /* iAd.framework */,
@@ -104,10 +114,14 @@
 		2162674F2384340D0019FD74 /* Singular-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				216267502384340D0019FD74 /* libSingular.a */,
-				216267512384340D0019FD74 /* Singular.js */,
-				216267522384340D0019FD74 /* SingularLinkParams.h */,
-				216267532384340D0019FD74 /* Singular.h */,
+				7F9A850E28B7BDF7001074F9 /* Attributes.h */,
+				7F9A850B28B7BDF7001074F9 /* Events.h */,
+				7F9A850C28B7BDF7001074F9 /* libSingular.a */,
+				7F9A850A28B7BDF7001074F9 /* Singular.h */,
+				7F9A850828B7BDF7001074F9 /* Singular.js */,
+				7F9A850D28B7BDF7001074F9 /* SingularAdData.h */,
+				7F9A850F28B7BDF7001074F9 /* SingularConfig.h */,
+				7F9A850928B7BDF7001074F9 /* SingularLinkParams.h */,
 			);
 			path = "Singular-SDK";
 			sourceTree = "<group>";
@@ -153,7 +167,7 @@
 				21626759238444350019FD74 /* Controllers */,
 				21DB6DB2237C036B008E845A /* AppDelegate.h */,
 				21DB6DB3237C036B008E845A /* AppDelegate.m */,
-				216267702386BC040019FD74 /* Constants.h */,
+				7FB812A328B7EAD9002784D9 /* Constants.h */,
 				216267712386BCA60019FD74 /* Utils.h */,
 				216267722386BCA60019FD74 /* Utils.m */,
 				21DB6DBB237C036B008E845A /* Main.storyboard */,
@@ -191,7 +205,7 @@
 		21DB6DA7237C036B008E845A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Singular Labs";
 				TargetAttributes = {
 					21DB6DAE237C036B008E845A = {
@@ -225,7 +239,7 @@
 				21DB6DC2237C036E008E845A /* LaunchScreen.storyboard in Resources */,
 				21DB6DBF237C036E008E845A /* Assets.xcassets in Resources */,
 				21DB6DBD237C036B008E845A /* Main.storyboard in Resources */,
-				216267552384340D0019FD74 /* Singular.js in Resources */,
+				7F9A851028B7BDF7001074F9 /* Singular.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +309,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -354,6 +369,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -388,7 +404,8 @@
 				CODE_SIGN_ENTITLEMENTS = "ios-sample-app/iOS Sample App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DZG6XY7PWJ;
+				DEVELOPMENT_TEAM = UL6RU95W7J;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "ios-sample-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,7 +429,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ios-sample-app/iOS Sample App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S84G4K2QJ2;
+				DEVELOPMENT_TEAM = UL6RU95W7J;
 				INFOPLIST_FILE = "ios-sample-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

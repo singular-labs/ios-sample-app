@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import "SingularAdData.h"
 
 // avoid circular include of SingularLinkParams
 #ifndef SingularLinkParams
@@ -20,6 +21,8 @@
 #endif
 
 @interface Singular : NSObject
+
+#pragma mark - Session lifecycle
 
 + (BOOL)start:(SingularConfig*)config;
 
@@ -38,6 +41,7 @@
 + (void)reStartSession:(NSString *)apiKey withKey:(NSString *)apiSecret;
 + (BOOL)sessionStarted;
 + (void)endSession;
+
 + (void)event:(NSString *)name;
 + (void)event:(NSString *)name withArgs:(NSDictionary *)args;
 + (void)eventWithArgs:(NSString *)name, ...; // use only subclasses of
@@ -63,7 +67,7 @@
 @property(nonatomic) int minSessionDuration;  // Default: 5
 + (void) setMinSessionDuration:(int)seconds;
 
-// IAP
+#pragma mark - IAP
 + (void)initializeApStore;
 + (void)setAllowAutoIAPComplete:(BOOL)boolean;
 + (void)iapComplete:(id)transaction;
@@ -71,19 +75,18 @@
 + (void)iapComplete:(id)transaction withAttributes:(id)value, ...;
 + (void)iapComplete:(id)transaction withName:(NSString*)name withAttributes:(id)value, ...;
 
-// DEMO
+#pragma mark - DEMO
 + (void)setGender:(NSString *)gender;
 + (void)setAge:(id)age;
 
-// BATCHING
+#pragma mark - BATCHING
 + (int)batchInterval;
 + (void)setBatchInterval:(int)interval;
 + (BOOL)batchesEvents;
 + (void)setBatchesEvents:(BOOL)boolean;
 + (void)sendAllBatches;
 
-//ANIMESH UPDATE
-// REVENUE
+#pragma mark - ANIMESH UPDATE / REVENUE
 + (void)revenue:(id)transaction;
 + (void)revenue:(id)transaction withAttributes:(NSDictionary*)attributes;
 + (void)revenue:(NSString *)currency amount:(double)amount;
@@ -100,17 +103,18 @@
 + (void)unsetCustomUserId;
 
 + (void)setSessionTimeout:(int)timeout;
++ (NSInteger)getFirstSessionUnixTime;
 
 + (void)setWrapperName:(NSString*)name andVersion:(NSString*)version;
 
-/* Global Properties */
+#pragma mark - Global Properties
 
 + (NSDictionary*)getGlobalProperties;
 + (BOOL)setGlobalProperty:(NSString*)key andValue:(NSString*)value overrideExisting:(BOOL)overrideExisting;
 + (void)unsetGlobalProperty:(NSString*)key;
 + (void)clearGlobalProperties;
 
-/* GDPR helpers */
+#pragma mark - GDPR helpers
 
 + (void)trackingOptIn;
 + (void)trackingUnder13;
@@ -120,10 +124,32 @@
 + (void)limitDataSharing:(BOOL)shouldLimitDataSharing;
 + (BOOL)getLimitDataSharing;
 
-/* SKAN Methods */
+#pragma mark - SKAN Methods
 
 + (void)skanRegisterAppForAdNetworkAttribution;
 + (BOOL)skanUpdateConversionValue:(NSInteger)conversionValue;
 + (NSNumber *)skanGetConversionValue;
+
+#pragma mark - Singular Links
+
++(BOOL)isSingularLink:(id)linkHolder;
+
+#pragma mark - Admon Methods
+
++ (void)adRevenue:(SingularAdData*)adData;
+
+#pragma mark - Referrer Links
+
++ (void)createReferrerShortLink:(NSString *)baseLink
+                   referrerName:(NSString *)referrerName
+                     referrerId:(NSString *)referrerId
+              completionHandler:(void(^)(NSString *, NSError *))completionHandler;
+
++ (void)createReferrerShortLink:(NSString *)baseLink
+                   referrerName:(NSString *)referrerName
+                     referrerId:(NSString *)referrerId
+              passthroughParams:(NSDictionary *)passthroughParams
+              completionHandler:(void(^)(NSString *, NSError *))completionHandler;
+
 
 @end
