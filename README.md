@@ -15,5 +15,5 @@ This sample contains examples of:
 To run the sample app you'll have to configure your own API Key / Secret as follows:
 
 1. Retrieve the API Key & Secret from your account's SDK Keys page
-2. Open the ios-sample-app project in XCode
+2. Open the ios-sample-app project in Xcode
 3. Go to the Constants.h file and replace the values of `APIKEY` & `SECRET` with your credentials
